@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "floorgen"
+version = "0.1.0"
+description = "Describe what your system must be able to recover; get a proven state floor"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Nick Harris" }]
+keywords = ["formal-methods", "verification", "pigeonhole", "lower-bounds", "impossibility",
+            "state-machines", "information-theory"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+floorgen = "floorgen.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nickharris808/floorgen"
+Source = "https://github.com/nickharris808/floorgen"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "floorgen: what must your system remember? an exact lower bound"
+abstract: >-
+  what must your system remember? an exact lower bound
+authors:
+  - family-names: Harris
+    given-names: Nick
+repository-code: "https://github.com/nickharris808/floorgen"
+url: "https://github.com/nickharris808/floorgen"
+license: Apache-2.0
+type: software
+keywords:
+  - verification
+  - abstention
+  - reproducibility

@@ -1,0 +1,20 @@
+{
+  "name": "cache admission — may this caller read this entry?",
+  "variables": {
+    "entry_owner":  ["tenant-a", "tenant-b", "tenant-c"],
+    "caller":       ["tenant-a", "tenant-b", "tenant-c"]
+  },
+  "answers": [
+    { "when": { "entry_owner": "tenant-a", "caller": "tenant-a" }, "answer": "ADMIT" },
+    { "when": { "entry_owner": "tenant-b", "caller": "tenant-b" }, "answer": "ADMIT" },
+    { "when": { "entry_owner": "tenant-c", "caller": "tenant-c" }, "answer": "ADMIT" }
+  ],
+  "default": "REFUSE",
+  "notes": [
+    "Nine situations, two answers -- so the decision itself needs only one bit.",
+    "That is NOT the same as saying the system needs one bit: to COMPUTE the answer it must",
+    "retain the owner, which is a 3-way distinction per entry. The floor is a bound on the",
+    "state needed to produce the declared ANSWER, and choosing the answer function carelessly",
+    "is the easiest way to compute a floor that is true and useless."
+  ]
+}
